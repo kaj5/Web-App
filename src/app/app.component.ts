@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { ApiGatewayService } from "./aws-api-gateway.service";
 
 @Component({
   selector: 'app-root',
@@ -7,4 +8,10 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'app';
+
+  constructor(private apiGateWayService : ApiGatewayService) { }
+
+  getMakeRequest(){
+    this.apiGateWayService.apiGateWayMethod();
+  }
 }
